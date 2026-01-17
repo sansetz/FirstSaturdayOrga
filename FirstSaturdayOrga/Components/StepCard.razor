@@ -1,0 +1,45 @@
+﻿<div class="step-card">
+    <div class="step-icon-container">
+
+        <span class="step-icon"
+              style="--icon-url: url('@($"../icons/{IconName}.svg")');">
+        </span>
+    </div>
+    <div class="step-title">
+        <div>
+            <h3>@Title</h3>
+        </div>
+    </div>
+    <div>
+        @* knopje alleen tonen als er extra info is *@
+        @if (!string.IsNullOrWhiteSpace(MoreInfo)) {
+            <button type="button" @onclick="Open">?</button>
+        }
+
+    </div>
+</div>
+
+
+@if (_isOpen) {
+    <div class="popup-background" @onclick="Close">
+        <div class="popup-content" @onclick:stopPropagation="true">
+            <h4>@Title</h4>
+            <p>@MoreInfo</p>
+
+            <button type="button" @onclick="Close">Sluiten</button>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public string Title { get; set; } = "";
+    [Parameter] public string IconName { get; set; } = "";
+
+
+    [Parameter] public string? MoreInfo { get; set; }  // mag null zijn
+
+    private bool _isOpen;
+
+    private void Open() => _isOpen = true;
+    private void Close() => _isOpen = false;
+}

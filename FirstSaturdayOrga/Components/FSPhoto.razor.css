@@ -1,6 +1,18 @@
 ﻿body {
 }
 
-.fsfoto {
+.fsphoto-container {
     display: grid;
+    margin: 5px;
+    justify-items: center;
+}
+.fsphoto{
+    width: 90%;
+}
+
+@media (min-width: 768px) {
+    .fsphoto {
+        width: 400px;
+    }
+    
 }

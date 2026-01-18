@@ -1,0 +1,44 @@
+﻿@using System.Globalization
+
+<div class="fsfoto">    
+    <img src="@($"images/fsfotos/{PhotoName}")" alt="@FSName" width="400px" />
+    <p>@FSName</p>
+</div>
+
+@code {
+    [Parameter] public string PhotoName { get; set; } = "";
+
+    private string FSName {
+        get {
+            if (string.IsNullOrWhiteSpace(PhotoName))
+                return "";
+
+            var firstDash = PhotoName.IndexOf('-');
+            if (firstDash < 0 || firstDash >= PhotoName.Length - 1)
+                return "";
+
+            var secondDash = PhotoName.LastIndexOf('-');
+            if (secondDash <= firstDash || secondDash >= PhotoName.Length - 1)
+                return "";
+
+            var year = PhotoName.Substring(0, firstDash);
+
+            var monthText = PhotoName.Substring(firstDash + 1, secondDash - firstDash - 1);
+
+            if (!int.TryParse(monthText, out var monthNr))
+                return "";
+
+            var monthName = CultureInfo
+                .CurrentCulture
+                .DateTimeFormat
+                .GetMonthName(monthNr);
+
+            var cityWithExt = PhotoName[(secondDash + 1)..];
+            var dot = cityWithExt.LastIndexOf('.');
+            var city = dot > 0 ? cityWithExt[..dot] : cityWithExt;
+
+            return $"{monthName} {year} {city}";
+        }
+    }
+
+}

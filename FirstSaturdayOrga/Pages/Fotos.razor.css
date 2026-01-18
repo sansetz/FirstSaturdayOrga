@@ -1,0 +1,7 @@
+﻿body {
+}
+
+.fotos {
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+}

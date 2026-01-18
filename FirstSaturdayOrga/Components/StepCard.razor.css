@@ -3,7 +3,7 @@
 }
 
 .step-card {
-    width: 400px;
+    width: 95%;
     border: 1px solid black;
     background-color: #8ea3bb;
     padding: 10px;
@@ -32,7 +32,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
+    z-index: 50;
 }
 
 .popup-content {
@@ -41,5 +41,5 @@
     border-radius: 8px;
     max-width: 520px;
     width: calc(100% - 2rem);
-    z-index: 1001;
+    z-index: 51;
 }

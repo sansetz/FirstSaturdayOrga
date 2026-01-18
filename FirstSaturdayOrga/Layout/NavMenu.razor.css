@@ -1,0 +1,175 @@
+﻿body {
+}
+
+.logo {
+    width: 50px;
+}
+/* === Menu Wrapper === */
+.menu-wrapper {
+    --menu-bg: hsl(240, 10%, 10%);
+    --menu-trsdu: .2s;
+    --menu-trstf: cubic-bezier(.4, 0, .2, 1);
+    --menu-pb: .75em;
+    --menu-pi: .35em;
+    align-items: center;
+    background: var(--menu-bg);
+    color: var(--menu--c, hsl(240, 0%, 85%));
+    display: flex;
+    font-size: var(--menu-fz, .75rem);
+    justify-content: space-between;
+    margin-inline: auto;
+    max-inline-size: var(--menu-desktop-w, 100%);
+    padding: var(--menu-pb) calc(env(safe-area-inset-right) + var(--menu-pi)) var(--menu-pb) calc(env(safe-area-inset-left) + var(--menu-pi));
+}
+
+    .menu-wrapper:has(input:checked) .menu-flyout {
+        translate: 0;
+    }
+
+    .menu-wrapper a {
+        align-items: center;
+        color: inherit;
+        display: flex;
+        gap: .5ch; /* gap between icon and text */
+        line-height: var(--menu-a-lh, 2.5);
+        transition: color var(--menu-trsdu) var(--menu-trstf);
+        text-decoration: none;
+    }
+
+.menu-toggle-label {
+    z-index: 1;
+}
+
+/* === Flyout === */
+.menu-flyout {
+    background: var(--menu-flyout-bg, inherit);
+    color: var(--menu-flyout-c, inherit);
+    display: flex;
+    flex-direction: column;
+    font-size: 150%;
+    inset: 0 var(--menu-flyout-offset, 0) 0 0;
+    justify-content: space-between;
+    padding: var(--menu-flyout-p, 4ch 2ch 2ch);
+    position: fixed;
+    transition: translate var(--menu-trsdu) var(--menu-trstf);
+    translate: -100vw 0;
+}
+
+/* === Menus === */
+.menu-cta, .menu-main {
+    display: flex;
+    flex: 1;
+    flex-direction: var(--menu-flyout-dir, column);
+}
+
+.menu-cta {
+    gap: clamp(0.5rem, -0.125rem + 2vw, 1rem);
+    justify-content: end;
+}
+
+.menu-main {
+    gap: clamp(0.5rem, -3.875rem + 14vw, 4rem);
+}
+
+@media (min-width: 768px) {
+    .menu-cta, .menu-main {
+        flex: unset;
+    }
+
+    .menu-flyout {
+        --menu-flyout-dir: row;
+        display: contents;
+        color: inherit;
+        font-size: 150%;
+    }
+
+    .menu-toggle-label {
+        display: none;
+    }
+
+    .menu-wrapper { /* stretch background-color to edge-of-screen */
+        border-image: conic-gradient(var(--menu-bg, hsl(240, 10%, 10%)) 0 0) fill 0//100vw;
+        clip-path: polygon(-100vw 0, 100vw 0, 100vw 100%, -100vw 100%);
+    }
+
+    .logo {
+        width: 100px;
+    }
+}
+/* === Prevent Scrolling, when flyout is visible === */
+@media (max-width: 767px) {
+    body:has(.menu-wrapper):has(input:checked) {
+        overflow: hidden;
+    }
+}
+
+@media(hover: hover) {
+    .menu-wrapper a:hover {
+        color: var(--menu-a-h-c, hsl(240, 0%, 100%));
+    }
+}
+
+/* === Menu Toggle === */
+.menu-toggle {
+    --menu-toggle-bdrs: 4px;
+    --menu-toggle-gap: 8px;
+    --menu-toggle-h: 2px;
+    --menu-toggle-w: 24px;
+    appearance: none;
+    color: inherit;
+    display: grid;
+    gap: var(--menu-toggle-gap);
+    height: var(--menu-toggle-w);
+    outline: none;
+    place-content: center;
+    width: var(--menu-toggle-w);
+}
+
+    .menu-toggle::before,
+    .menu-toggle::after {
+        background-color: currentColor;
+        border-radius: var(--menu-toggle-bdrs);
+        content: "";
+        height: var(--menu-toggle-h);
+        transform-origin: center center;
+        transition: rotate var(--menu-trsdu) var(--menu-trstf);
+        width: var(--menu-toggle-w);
+    }
+
+    .menu-toggle:checked {
+        gap: 0;
+    }
+
+        .menu-toggle:checked::after {
+            rotate: 45deg;
+            translate: var(--menu-toggle-h) calc(var(--menu-toggle-h) / -2);
+        }
+
+        .menu-toggle:checked::before {
+            rotate: -45deg;
+            translate: var(--menu-toggle-h) calc(var(--menu-toggle-h) / 2);
+        }
+
+/* === Reset, Demo-Styles === */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    margin: 0;
+}
+
+/* === Icons === */
+.icon, .icon-stroke {
+    height: var(--icon-sz, 2em);
+    width: var(--icon-sz, 2em);
+}
+
+.icon-stroke {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1;
+    stroke: currentColor;
+}

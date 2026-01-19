@@ -1,8 +1,13 @@
 ﻿@using System.Globalization
 
 <div class="fsphoto-container">    
-    <img class="fsphoto" src="@($"images/fsfotos/{PhotoName}")" alt="@FSName"/>
-    <p>@FSName</p>
+    <ZoomableImage 
+        Src="@($"images/fsfotos/{PhotoName}")"
+        Alt="@FSName"
+        CssClass="fsphoto"
+        Caption="@FSName" 
+    />
+    <div classname="photo-title">@FSName</div>
 </div>
 
 @code {

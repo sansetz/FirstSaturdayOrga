@@ -1,0 +1,32 @@
+﻿<img class="@CssClass"
+     src="@Src"
+     alt="@Alt"
+     @onclick="Open"
+     style="cursor: zoom-in;" />
+
+@if (_isOpen) {
+    <div class="img-backdrop" @onclick="Close">
+        <div class="img-modal" @onclick:stopPropagation="true">
+            <button type="button" class="img-close" @onclick="Close" aria-label="Sluiten">×</button>
+
+            <img class="img-full" src="@Src" alt="@Alt" />
+            @if (!string.IsNullOrWhiteSpace(Caption)) {
+                <div class="img-caption">@Caption</div>
+            }
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter, EditorRequired] public string Src { get; set; } = "";
+    [Parameter] public string Alt { get; set; } = "";
+    [Parameter] public string? Caption { get; set; }
+
+    // zodat je jouw howto-img / modifiers kunt blijven gebruiken
+    [Parameter] public string CssClass { get; set; } = "howto-img";
+
+    private bool _isOpen;
+
+    private void Open() => _isOpen = true;
+    private void Close() => _isOpen = false;
+}

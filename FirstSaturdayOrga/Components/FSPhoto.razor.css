@@ -3,15 +3,21 @@
 
 .fsphoto-container {
     display: grid;
+    grid-template-rows: auto 30px;
     margin: 5px;
     justify-items: center;
 }
-.fsphoto{
+
+.photo-title{
+    text-align: center;
+}
+
+::deep .fsphoto {
     width: 90%;
 }
 
 @media (min-width: 768px) {
-    .fsphoto {
+    ::deep .fsphoto {
         width: 400px;
     }
     

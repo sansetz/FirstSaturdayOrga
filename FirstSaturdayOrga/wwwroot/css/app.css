@@ -5,6 +5,7 @@
     --color-blue: hsl(208, 82%, 56%);
     --color-black: hsl(0, 0%, 20%);
     --color-grey: hsl(0, 0%, 40%);
+    --color-warning: hsl(56, 100%, 50%);
     margin: 0;
     padding: 0;
 }

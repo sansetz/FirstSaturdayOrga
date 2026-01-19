@@ -1,0 +1,49 @@
+﻿.img-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.75);
+    display: grid;
+    place-items: center;
+    padding: 16px;
+    z-index: 10000;
+}
+
+.img-modal {
+    position: relative;
+    max-width: min(1100px, calc(100vw - 32px));
+    max-height: min(90vh, calc(100vh - 32px));
+    background: #111;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.45);
+}
+
+.img-full {
+    display: block;
+    max-width: 100%;
+    max-height: calc(90vh - 80px);
+    height: auto;
+    width: auto;
+    margin: 0 auto;
+}
+
+.img-close {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    border: 0;
+    background: rgba(255,255,255,.15);
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.img-caption {
+    color: #fff;
+    opacity: .9;
+    margin-top: 8px;
+    font-size: .95rem;
+}

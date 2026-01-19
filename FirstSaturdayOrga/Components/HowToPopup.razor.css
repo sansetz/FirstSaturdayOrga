@@ -1,6 +1,24 @@
 ﻿body {
 }
 
+.note {
+    background-color: var(--color-warning);
+    color: var(--color-black);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.howto{
+    padding: 10px;
+}
+::deep ol.steps {
+    padding-left: 1.5rem;
+    list-style-position: outside;
+}
+
+    ::deep ol.steps > li {
+        margin-bottom: 1rem; 
+    }
+
 .howto ::deep .howto-img {
     max-width: 100%;
     height: auto;

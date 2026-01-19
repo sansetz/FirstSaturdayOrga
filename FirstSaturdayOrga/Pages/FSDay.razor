@@ -1,0 +1,97 @@
+﻿@page "/fsday"
+
+<FSOrga PageTitle="Dag van FS">
+    <RequiredContent>
+        <StepCard 
+            TitleShort="1. Groepsfoto maken"
+            TitleLong="Stap 1: Groepsfoto maken"
+            IconName="photo"
+            IsRequiredStep="true"
+        >
+            <PopupContent>
+                <FevGamesRegistrationPopup />
+            </PopupContent>
+        </StepCard>       
+        <StepCard 
+            TitleShort="2. Bot openen"
+            TitleLong="Stap 2: Bot open zetten voor gebruik"
+            IconName="bot"
+            IsRequiredStep="true"
+        >
+            <PopupContent>
+                <FevGamesRegistrationPopup />
+            </PopupContent>
+        </StepCard>
+        <StepCard 
+            TitleShort="3. QR codes scannen"
+            TitleLong="Stap 3: QR codes scannen"
+            IconName="qrcode"
+            IsRequiredStep="true"
+        >
+            <PopupContent>
+                <FevGamesRegistrationPopup />
+            </PopupContent>
+        </StepCard>
+        <StepCard TitleShort="4. Passcode monitoren"
+                  TitleLong="Stap 4: Monitoren of passcode wordt opgelost"
+                  IconName="passcode"
+                  IsRequiredStep="true">
+            <PopupContent>
+                <FevGamesRegistrationPopup />
+            </PopupContent>
+        </StepCard>
+        <StepCard 
+            TitleShort="5. Deelnemers monitoren"
+            TitleLong="Stap 5: Deelnemers monitoren op verificatie en eindstats"
+            IconName="check"
+            IsRequiredStep="true"
+        >
+            <PopupContent>
+                <FevGamesRegistrationPopup />
+            </PopupContent>
+        </StepCard>
+        <StepCard 
+            TitleShort="6. Bot sluiten"
+            TitleLong="Stap 6: Bot sluiten"
+            IconName="bot"
+            IsRequiredStep="true"
+        >
+            <PopupContent>
+                <FevGamesRegistrationPopup />
+            </PopupContent>
+        </StepCard>
+    </RequiredContent>
+    <OptionalContent>
+        <StepCard 
+            TitleShort="A. Bot reminders sturen"
+            TitleLong="Stap A: Bot reminders sturen (als niet gescheduled)"
+            IconName="bot"
+            IsRequiredStep="false"
+        >
+            <PopupContent>
+                <FevGamesRegistrationPopup />
+            </PopupContent>
+        </StepCard>
+        <StepCard TitleShort="B. Prijsuitreiking"
+                  TitleLong="Stap B: Prijsuitreiking"
+                  IconName="prize"
+                  IsRequiredStep="false">
+            <PopupContent>
+                <FevGamesRegistrationPopup />
+            </PopupContent>
+        </StepCard>
+        <StepCard TitleShort="C. Stats delen"
+                  TitleLong="Stap C: Stats delen in de FS chats"
+                  IconName="stats"
+                  IsRequiredStep="false">
+            <PopupContent>
+                <FevGamesRegistrationPopup />
+            </PopupContent>
+        </StepCard>
+    </OptionalContent>
+</FSOrga>
+
+
+@code {
+
+}

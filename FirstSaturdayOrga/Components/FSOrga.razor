@@ -1,0 +1,27 @@
+﻿
+
+
+
+<div class="page-container">
+    <div class="nav-column">
+        <FSOrgaNavigation CurrentPage=@PageTitle />
+
+    </div>
+
+    <div class="page-column page-column--required">
+        <div class="column-header column-header--required">Verplichte stappen</div>
+        @RequiredContent
+    </div>
+    <div class="page-column page-column--optional">
+        <div class="column-header column-header--optional">Optionele stappen</div>
+        @OptionalContent
+    </div>
+
+</div>
+
+@code {
+    [Parameter] public string PageTitle { get; set; }
+    [Parameter] public RenderFragment? RequiredContent { get; set; }
+    [Parameter] public RenderFragment? OptionalContent { get; set; }
+
+}

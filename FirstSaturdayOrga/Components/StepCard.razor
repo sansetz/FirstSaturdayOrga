@@ -1,42 +1,66 @@
-﻿<div class="step-card">
+﻿<div class="@("step-card " + (IsRequiredStep ? "step-card--required" : "step-card--optional"))">
     <div class="step-icon-container">
+        @if (IsRequiredStep)
+        {
+            <span class="step-icon step-icon--required"
+                  style="--icon-url: url('@($"../icons/{IconName}.svg")');">
+            </span>
+        }
+        else
+        {
+            <span class="step-icon step-icon--optional"
+                  style="--icon-url: url('@($"../icons/{IconName}.svg")');">
+            </span>
+        }
 
-        <span class="step-icon"
-              style="--icon-url: url('@($"../icons/{IconName}.svg")');">
-        </span>
+
     </div>
     <div class="step-title">
-        <div>
-            <h3>@Title</h3>
-        </div>
+        <div class="step-title--short">@TitleShort</div>
+        <div class="step-title--long">@TitleLong</div>
+
     </div>
     <div>
-        @* knopje alleen tonen als er extra info is *@
-        @if (!string.IsNullOrWhiteSpace(MoreInfo)) {
-            <button type="button" @onclick="Open">?</button>
+        @if (PopupContent is not null) {
+            <button 
+                type="button" 
+                class="@("step-info-btn " + (IsRequiredStep ? "step-info-btn--required" : "step-info-btn--optional"))" 
+                @onclick="Open" 
+                aria-label="Meer info"
+            >
+                ?
+            </button>
         }
 
     </div>
 </div>
 
-
 @if (_isOpen) {
-    <div class="popup-background" @onclick="Close">
-        <div class="popup-content" @onclick:stopPropagation="true">
-            <h4>@Title</h4>
-            <p>@MoreInfo</p>
+    <div class="modal-container" @onclick="Close">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-label="@TitleShort"
+             @onclick:stopPropagation="true">
+            <div class="modal-header">
+                <div class="step-title--short">@TitleShort</div>
+                <div class="step-title--long">@TitleLong</div>
+                <button type="button" class="modal-close" @onclick="Close" aria-label="Sluiten">×</button>
+            </div>
 
-            <button type="button" @onclick="Close">Sluiten</button>
+            <div class="modal-body">
+                @PopupContent
+            </div>
         </div>
     </div>
 }
 
 @code {
-    [Parameter] public string Title { get; set; } = "";
+    [Parameter] public string TitleShort { get; set; } = "";
+    [Parameter] public string TitleLong { get; set; } = "";
     [Parameter] public string IconName { get; set; } = "";
+    [Parameter] public bool IsRequiredStep { get; set; } = true;
 
 
-    [Parameter] public string? MoreInfo { get; set; }  // mag null zijn
+    [Parameter] public RenderFragment? PopupContent { get; set; }
+
 
     private bool _isOpen;
 

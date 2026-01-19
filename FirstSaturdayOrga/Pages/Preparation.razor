@@ -1,10 +1,113 @@
 ﻿@page "/preparation"
 
-
-<h3>Preparation</h3>
-<StepCard Title="Registreren bij FevGames" MoreInfo="Zo moet je registreren" IconName="fevgames"/>
-<StepCard Title="Locatie regelen" MoreInfo="Zo moet je locatie regelen" IconName="beer" />
+<FSOrga PageTitle="Voorbereiding">
+    <RequiredContent>
+        <StepCard 
+            TitleShort="1. FevGames registratie"
+            TitleLong="Stap 1: Registreren bij FevGames"
+            IconName="fevgames"
+            IsRequiredStep="true"
+        >
+            <PopupContent>
+                <FevGamesRegistrationPopup />
+            </PopupContent>
+        </StepCard>
+        <StepCard 
+            TitleShort="2. Telegram chats maken"
+            TitleLong="Stap 2: Telegram groepen en kanaal aanmaken"
+            IconName="telegram"
+            IsRequiredStep="true"
+        >
+            <PopupContent>
+                <TelegramChatsPopup />
+            </PopupContent>
+        </StepCard>
+        <StepCard 
+            TitleShort="3. Aankondiging versturen"
+            TitleLong="Stap 3: Aankondiging sturen naar diverse chats"
+            IconName="announcement"
+            IsRequiredStep="true"
+        >
+            <PopupContent>
+                <TelegramChatsPopup />
+            </PopupContent>
+        </StepCard>
+        <StepCard 
+            TitleShort="4. FS Bot inrichten"
+            TitleLong="Stap 4: FS Bot inrichten"
+            IconName="bot"
+            IsRequiredStep="true"
+        >
+            <PopupContent>
+                <TelegramChatsPopup />
+            </PopupContent>
+        </StepCard>
+        <StepCard 
+            TitleShort="5. Passcode portals delen"
+            TitleLong="Stap 5: Passcode portals delen in passcode chat"
+            IconName="passcode"
+            IsRequiredStep="true"
+        >
+            <PopupContent>
+                <TelegramChatsPopup />
+            </PopupContent>
+        </StepCard>
+    </RequiredContent>
+    <OptionalContent>
+        <StepCard 
+            TitleShort="A. Locatie regelen"
+            TitleLong="Stap A: Geschikte locatie regelen"
+            IconName="beer"
+            IsRequiredStep="false"
+        >
+            <PopupContent>
+                <FevGamesRegistrationPopup />
+            </PopupContent>
+        </StepCard>
+        <StepCard 
+            TitleShort="B. Biocard maken"
+            TitleLong="Stap B: Biocard (laten) maken"
+            IconName="biocard"
+            IsRequiredStep="false"
+        >
+            <PopupContent>
+                <FevGamesRegistrationPopup />
+            </PopupContent>
+        </StepCard>
+        <StepCard 
+            TitleShort="C. Banner(s) maken"
+            TitleLong="Stap C: Een of meerdere banners maken"
+            IconName="banner"
+            IsRequiredStep="false"
+        >
+            <PopupContent>
+                <FevGamesRegistrationPopup />
+            </PopupContent>
+        </StepCard>
+        <StepCard 
+            TitleShort="D. Bot reminders schedulen"
+            TitleLong="Stap D: Bot reminders schedules"
+            IconName="bot"
+            IsRequiredStep="false"
+        >
+            <PopupContent>
+                <FevGamesRegistrationPopup />
+            </PopupContent>
+        </StepCard>
+        <StepCard 
+            TitleShort="E. Prijsjes regelen"
+            TitleLong="Stap E: Leuke prijsjes regelen"
+            IconName="prize"
+            IsRequiredStep="false"
+        >
+            <PopupContent>
+                <FevGamesRegistrationPopup />
+            </PopupContent>
+        </StepCard>
+    </OptionalContent>
+</FSOrga> 
 
 
 @code {
+    
 }

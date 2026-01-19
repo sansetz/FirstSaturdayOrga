@@ -23,7 +23,7 @@
 }
 
     .menu-wrapper:has(input:checked) .menu-flyout {
-        translate: 0;
+        transform: translateX(0);
     }
 
     .menu-wrapper a {
@@ -51,8 +51,8 @@
     justify-content: space-between;
     padding: var(--menu-flyout-p, 4ch 2ch 2ch);
     position: fixed;
-    transition: translate var(--menu-trsdu) var(--menu-trstf);
-    translate: -100vw 0;
+    transform: translateX(-100%);
+    transition: transform var(--menu-trsdu) var(--menu-trstf);
 }
 
 /* === Menus === */
@@ -70,7 +70,14 @@
 .menu-main {
     gap: clamp(0.5rem, -3.875rem + 14vw, 4rem);
 }
+.menu-main a {
+    padding: 20px;
+}
 
+    .menu-main a:hover {
+        background-color: hsl(240, 0%, 85%);
+        color: black;
+    }
 @media (min-width: 768px) {
     .menu-cta, .menu-main {
         flex: unset;

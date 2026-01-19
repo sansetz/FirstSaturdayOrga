@@ -1,0 +1,12 @@
+﻿<div class="howto">
+    @if (!string.IsNullOrWhiteSpace(Note)) {
+        <p class="note">@Note</p>
+    }
+
+    @ChildContent
+</div>
+
+@code {
+    [Parameter] public string? Note { get; set; }
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+}

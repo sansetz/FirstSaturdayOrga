@@ -33,10 +33,10 @@
             if (!int.TryParse(monthText, out var monthNr))
                 return "";
 
-            var monthName = CultureInfo
-                .CurrentCulture
-                .DateTimeFormat
-                .GetMonthName(monthNr);
+
+            var culture = new CultureInfo("nl-NL");
+            var monthName = culture.DateTimeFormat.GetMonthName(monthNr);
+            monthName = culture.TextInfo.ToTitleCase(monthName);
 
             var cityWithExt = PhotoName[(secondDash + 1)..];
             var dot = cityWithExt.LastIndexOf('.');

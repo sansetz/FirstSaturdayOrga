@@ -1,0 +1,19 @@
+﻿@page "/photos"
+@inject HttpClient HttpClient
+@inject FirstSaturdayOrga.Services.PhotoService PhotoService
+
+
+<div class="photos">
+    @foreach (var photo in AllPhotos) {
+        <FSPhoto PhotoName="@photo" />
+    }
+</div>
+
+
+@code {
+    private List<string> AllPhotos = [];
+
+    protected override async Task OnInitializedAsync() {
+        AllPhotos = await PhotoService.GetAllPhotosAsync();
+    }
+}

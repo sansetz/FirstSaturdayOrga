@@ -1,0 +1,50 @@
+﻿@page "/precovid"
+@using FirstSaturdayOrga.Contracts
+@inject FirstSaturdayOrga.Services.DashboardService DashboardService
+
+<h3>FsInNl Pre-Covid</h3>
+
+<div class="dashboard">
+<div class="dashboard-grid">
+    <section class="card map-card">
+        <div class="card-title">Map</div>
+        <img class="map-img" src="images/fsinnl/pre-covid.png" alt="Map" />
+    </section>
+
+    <section class="tables">
+        <div class="tables-col left">
+            <section class="card table-card y2015">
+                <DashboardTable Year="2015" FSEvents="@event2015" HeaderColor="HeaderColor.Red" />
+            </section>
+
+            <section class="card table-card y2020">
+                <DashboardTable Year="2020" FSEvents="@event2020" HeaderColor="HeaderColor.Blue" />
+            </section>
+        </div>
+
+        <div class="tables-col right">
+            <section class="card table-card y2016">
+                <DashboardTable Year="2016" FSEvents="@event2016" HeaderColor="HeaderColor.Yellow" />
+            </section>
+
+            <section class="card table-card y2019">
+                <DashboardTable Year="2019" FSEvents="@event2019" HeaderColor="HeaderColor.Green" />
+            </section>
+        </div>
+    </section>
+</div>
+</div>
+
+@code {
+    private List<FSEventListItem> event2015 = [];
+    private List<FSEventListItem> event2016 = [];
+    private List<FSEventListItem> event2019 = [];
+    private List<FSEventListItem> event2020 = [];
+
+    protected override async Task OnInitializedAsync() {
+        event2015 = await DashboardService.GetAllEventsForYearAsync(2015);
+        event2016 = await DashboardService.GetAllEventsForYearAsync(2016);
+        event2019 = await DashboardService.GetAllEventsForYearAsync(2019);
+        event2020 = await DashboardService.GetAllEventsForYearAsync(2020);
+    }
+}

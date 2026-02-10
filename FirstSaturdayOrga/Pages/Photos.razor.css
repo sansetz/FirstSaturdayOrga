@@ -1,0 +1,13 @@
+﻿body {
+}
+
+.photos {
+    display: grid;
+    grid-template-columns: 99%;
+}
+
+@media (min-width: 768px) {
+    .photos {
+        grid-template-columns: 33% 33% 33%;
+    }
+}

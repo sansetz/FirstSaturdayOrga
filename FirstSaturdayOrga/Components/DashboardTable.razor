@@ -1,0 +1,28 @@
+﻿@using FirstSaturdayOrga.Contracts
+@using FirstSaturdayOrga.Extensions
+
+<div class="dash-table">
+    <div class="dash-table__header @HeaderColor.ToCssClass()">
+        <span class="dash-table__title">@Year</span>
+    </div>
+
+    <table class="dash-table__table">
+        <tbody>
+            @foreach (FSEventListItem fsEvent in FSEvents) {
+                <tr>
+                    <td>@fsEvent.Month</td>
+                    <td>@fsEvent.City</td>
+                    <td>@fsEvent.Province</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+@code {
+    [Parameter] public int Year { get; set; } = 0;
+    [Parameter] public List<FSEventListItem> FSEvents { get; set; } = [];
+    [Parameter] public HeaderColor HeaderColor { get; set; } = HeaderColor.Red;
+}

@@ -1,0 +1,925 @@
+[
+  {
+    "year": 2015,
+    "month": 2,
+    "city": "Breda",
+    "province": "Noord-Brabant",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2015,
+    "month": 2,
+    "city": "Den Haag",
+    "province": "Zuid-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2015,
+    "month": 3,
+    "city": "Efteling, Kaatsheuvel",
+    "province": "Noord-Brabant",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+
+  },
+  {
+    "year": 2015,
+    "month": 3,
+    "city": "Dordrecht",
+    "province": "Zuid-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+
+  },
+  {
+    "year": 2015,
+    "month": 6,
+    "city": "Den Haag",
+    "province": "Zuid-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2015,
+    "month": 6,
+    "city": "Hengelo",
+    "province": "Overijssel",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2015,
+    "month": 7,
+    "city": "Den Haag",
+    "province": "Zuid-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2015,
+    "month": 8,
+    "city": "Utrecht",
+    "province": "Utrecht",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2015,
+    "month": 9,
+    "city": "Enschede",
+    "province": "Overijssel",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2015,
+    "month": 9,
+    "city": "Utrecht",
+    "province": "Utrecht",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2015,
+    "month": 10,
+    "city": "Apeldoorn",
+    "province": "Gelderland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2015,
+    "month": 10,
+    "city": "Den Haag",
+    "province": "Zuid-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2015,
+    "month": 11,
+    "city": "Den Haag",
+    "province": "Zuid-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2016,
+    "month": 12,
+    "province": "Noord-Holland",
+    "city": "Alkmaar",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 2,
+    "city": "Zaandam",
+    "province": "Noord-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 3,
+    "city": "Alkmaar",
+    "province": "Noord-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 4,
+    "city": "Maastricht",
+    "province": "Limburg",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 4,
+    "city": "Purmerend",
+    "province": "Noord-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 5,
+    "city": "Hilversum",
+    "province": "Noord-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 5,
+    "city": "Nijverdal",
+    "province": "Overijssel",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 6,
+    "city": "Rotterdam",
+    "province": "Zuid-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 6,
+    "city": "Purmerend",
+    "province": "Noord-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 7,
+    "city": "Groningen",
+    "province": "Groningen",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 7,
+    "city": "Zaanstad",
+    "province": "Noord-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 7,
+    "city": "Schiedam",
+    "province": "Zuid-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 8,
+    "city": "Zwolle",
+    "province": "Overijssel",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 8,
+    "city": "Tilburg",
+    "province": "Noord-Brabant",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 8,
+    "city": "Landsmeer",
+    "province": "Noord-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 9,
+    "city": "Sliedrecht",
+    "province": "Zuid-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 9,
+    "city": "Eindhoven",
+    "province": "Noord-Brabant",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 9,
+    "city": "Almere",
+    "province": "Flevoland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 10,
+    "city": "Amersfoort",
+    "province": "Utrecht",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 10,
+    "city": "Breda",
+    "province": "Noord-Brabant",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 10,
+    "city": "Alphen aan den Rijn",
+    "province": "Zuid-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 10,
+    "city": "Amsterdam",
+    "province": "Noord-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 11,
+    "city": "Drachten",
+    "province": "Friesland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 11,
+    "city": "Rotterdam",
+    "province": "Zuid-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 11,
+    "city": "Enschede",
+    "province": "Overijssel",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 12,
+    "city": "Apeldoorn",
+    "province": "Gelderland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 12,
+    "city": "Medemblik",
+    "province": "Noord-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2019,
+    "month": 12,
+    "city": "Rotterdam",
+    "province": "Zuid-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2020,
+    "month": 1,
+    "city": "Utrecht",
+    "province": "Utrecht",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2020,
+    "month": 1,
+    "city": "Rotterdam",
+    "province": "Zuid-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2020,
+    "month": 2,
+    "city": "Efteling, Kaatsheuvel",
+    "province": "Noord-Brabant",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2020,
+    "month": 2,
+    "city": "Borne",
+    "province": "Overijssel",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2020,
+    "month": 2,
+    "city": "Den Haag",
+    "province": "Zuid-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2020,
+    "month": 3,
+    "city": "Dordrecht",
+    "province": "Zuid-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2020,
+    "month": 3,
+    "city": "‘s-Hertogenbosch",
+    "province": "Noord-Brabant",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2020,
+    "month": 3,
+    "city": "Haarlem",
+    "province": "Noord-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2020,
+    "month": 3,
+    "city": "Gouda",
+    "province": "Zuid-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2020,
+    "month": 4,
+    "city": "Delft",
+    "province": "Zuid-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2020,
+    "month": 4,
+    "city": "Zaanse Schans",
+    "province": "Noord-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2023,
+    "month": 2,
+    "city": "Schiedam",
+    "province": "Zuid-Holland",
+    "agentsEnl": 25,
+    "agentsRes": 35,
+    "apEnl": 5869406,
+    "apRes": 4060047
+  },
+  {
+    "year": 2023,
+    "month": 3,
+    "city": "Leiden",
+    "province": "Zuid-Holland",
+    "agentsEnl": 49,
+    "agentsRes": 40,
+    "apEnl": 13877135,
+    "apRes": 10091325
+  },
+  {
+    "year": 2023,
+    "month": 4,
+    "city": "Amersfoort",
+    "province": "Utrecht",
+    "agentsEnl": 48,
+    "agentsRes": 41,
+    "apEnl": 14605765,
+    "apRes": 7893170
+  },
+  {
+    "year": 2023,
+    "month": 5,
+    "city": "Eindhoven",
+    "province": "Noord-Brabant",
+    "agentsEnl": 41,
+    "agentsRes": 50,
+    "apEnl": 11989412,
+    "apRes": 10212755
+  },
+  {
+    "year": 2023,
+    "month": 6,
+    "city": "Bodegraven",
+    "province": "Zuid-Holland",
+    "agentsEnl": 24,
+    "agentsRes": 23,
+    "apEnl": 4850931,
+    "apRes": 4236972
+  },
+  {
+    "year": 2023,
+    "month": 7,
+    "city": "Enschede",
+    "province": "Overijssel",
+    "agentsEnl": 33,
+    "agentsRes": 36,
+    "apEnl": 17982514,
+    "apRes": 15182554
+  },
+  {
+    "year": 2023,
+    "month": 8,
+    "city": "Warmond",
+    "province": "Zuid-Holland",
+    "agentsEnl": 22,
+    "agentsRes": 19,
+    "apEnl": 22627432,
+    "apRes": 14102498
+  },
+  {
+    "year": 2023,
+    "month": 9,
+    "city": "Gouda",
+    "province": "Zuid-Holland",
+    "agentsEnl": 26,
+    "agentsRes": 33,
+    "apEnl": 9392081,
+    "apRes": 8852173
+  },
+  {
+    "year": 2023,
+    "month": 10,
+    "city": "Medemblik",
+    "province": "Noord-Holland",
+    "agentsEnl": 29,
+    "agentsRes": 27,
+    "apEnl": 9815848,
+    "apRes": 5680880
+  },
+  {
+    "year": 2023,
+    "month": 11,
+    "city": "Hengelo",
+    "province": "Overijssel",
+    "agentsEnl": 10,
+    "agentsRes": 12,
+    "apEnl": 2141425,
+    "apRes": 1591550
+  },
+  {
+    "year": 2023,
+    "month": 12,
+    "city": "Gorinchem",
+    "province": "Zuid-Holland",
+    "agentsEnl": 31,
+    "agentsRes": 33,
+    "apEnl": 17238729,
+    "apRes": 8974841
+  },
+  {
+    "year": 2024,
+    "month": 1,
+    "city": "Den Haag",
+    "province": "Zuid-Holland",
+    "agentsEnl": 30,
+    "agentsRes": 38,
+    "apEnl": 12554719,
+    "apRes": 11808032
+  },
+  {
+    "year": 2024,
+    "month": 1,
+    "city": "Enschede",
+    "province": "Overijssel",
+    "agentsEnl": 11,
+    "agentsRes": 21,
+    "apEnl": 5761398,
+    "apRes": 2663754
+  },
+  {
+    "year": 2024,
+    "month": 2,
+    "city": "Den Bosch",
+    "province": "Noord-Brabant",
+    "agentsEnl": 31,
+    "agentsRes": 36,
+    "apEnl": 13373680,
+    "apRes": 14338647
+  },
+  {
+    "year": 2024,
+    "month": 3,
+    "city": "Holten",
+    "province": "Overijssel",
+    "agentsEnl": 102,
+    "agentsRes": 107,
+    "apEnl": 29491855,
+    "apRes": 27307035
+  },
+  {
+    "year": 2024,
+    "month": 4,
+    "city": "Utrecht",
+    "province": "Utrecht",
+    "agentsEnl": 55,
+    "agentsRes": 48,
+    "apEnl": 20949660,
+    "apRes": 14591950
+  },
+  {
+    "year": 2024,
+    "month": 5,
+    "city": "Wageningen",
+    "province": "Gelderland",
+    "agentsEnl": 42,
+    "agentsRes": 37,
+    "apEnl": 12787231,
+    "apRes": 8294364
+  },
+  {
+    "year": 2024,
+    "month": 6,
+    "city": "Breda",
+    "province": "Noord-Brabant",
+    "agentsEnl": 44,
+    "agentsRes": 44,
+    "apEnl": 16035360,
+    "apRes": 12640691
+  },
+  {
+    "year": 2024,
+    "month": 7,
+    "city": "Harderwijk",
+    "province": "Gelderland",
+    "agentsEnl": 29,
+    "agentsRes": 32,
+    "apEnl": 12754139,
+    "apRes": 7579757
+  },
+  {
+    "year": 2024,
+    "month": 8,
+    "city": "Doetinchem",
+    "province": "Gelderland",
+    "agentsEnl": 30,
+    "agentsRes": 32,
+    "apEnl": 41382802,
+    "apRes": 22466188
+  },
+  {
+    "year": 2024,
+    "month": 9,
+    "city": "Groningen",
+    "province": "Groningen",
+    "agentsEnl": 45,
+    "agentsRes": 49,
+    "apEnl": 13302203,
+    "apRes": 11539744
+  },
+  {
+    "year": 2024,
+    "month": 9,
+    "city": "Enschede",
+    "province": "Overijssel",
+    "agentsEnl": 10,
+    "agentsRes": 9,
+    "apEnl": 1697251,
+    "apRes": 1238430
+  },
+  {
+    "year": 2024,
+    "month": 11,
+    "city": "Apeldoorn",
+    "province": "Gelderland",
+    "agentsEnl": 14,
+    "agentsRes": 31,
+    "apEnl": 6116585,
+    "apRes": 7370272
+  },
+  {
+    "year": 2024,
+    "month": 12,
+    "city": "Maastricht",
+    "province": "Limburg",
+    "agentsEnl": 20,
+    "agentsRes": 19,
+    "apEnl": 3917340,
+    "apRes": 4214037
+  },
+  {
+    "year": 2024,
+    "month": 12,
+    "city": "Haarlem",
+    "province": "Noord-Holland",
+    "agentsEnl": 25,
+    "agentsRes": 33,
+    "apEnl": 7579022,
+    "apRes": 6393660
+
+  },
+  {
+    "year": 2025,
+    "month": 1,
+    "city": "Nijverdal",
+    "province": "Overijssel",
+    "agentsEnl": 19,
+    "agentsRes": 43,
+    "apEnl": 1493172,
+    "apRes": 3379285
+  },
+  {
+    "year": 2025,
+    "month": 2,
+    "city": "Deventer",
+    "province": "Overijssel",
+    "agentsEnl": 28,
+    "agentsRes": 34,
+    "apEnl": 6828585,
+    "apRes": 7834125
+  },
+  {
+    "year": 2025,
+    "month": 3,
+    "city": "Arnhem",
+    "province": "Gelderland",
+    "agentsEnl": 13,
+    "agentsRes": 19,
+    "apEnl": 4334910,
+    "apRes": 5731362
+  },
+  {
+    "year": 2025,
+    "month": 4,
+    "city": "Beverwijk",
+    "province": "Noord-Holland",
+    "agentsEnl": 44,
+    "agentsRes": 38,
+    "apEnl": 6409599,
+    "apRes": 6935376
+  },
+  {
+    "year": 2025,
+    "month": 5,
+    "city": "Alkmaar",
+    "province": "Noord-Holland",
+    "agentsEnl": 43,
+    "agentsRes": 45,
+    "apEnl": 17254883,
+    "apRes": 11770271
+  },
+  {
+    "year": 2025,
+    "month": 6,
+    "city": "Schijndel",
+    "province": "Noord-Brabant",
+    "agentsEnl": 22,
+    "agentsRes": 37,
+    "apEnl": 4832090,
+    "apRes": 3669072
+  },
+  {
+    "year": 2025,
+    "month": 7,
+    "city": "Zaandam",
+    "province": "Noord-Holland",
+    "agentsEnl": 39,
+    "agentsRes": 42,
+    "apEnl": 24203974,
+    "apRes": 18924226
+  },
+  {
+    "year": 2025,
+    "month": 8,
+    "city": "Vught",
+    "province": "Noord-Brabant",
+    "agentsEnl": 28,
+    "agentsRes": 33,
+    "apEnl": 29032970,
+    "apRes": 22479080
+  },
+  {
+    "year": 2025,
+    "month": 9,
+    "city": "Leeuwarden",
+    "province": "Friesland",
+    "agentsEnl": 25,
+    "agentsRes": 30,
+    "apEnl": 16575090,
+    "apRes": 13796674
+  },
+  {
+    "year": 2025,
+    "month": 10,
+    "city": "Nijmegen",
+    "province": "Gelderland",
+    "agentsEnl": 23,
+    "agentsRes": 27,
+    "apEnl": 13855132,
+    "apRes": 19731342
+  },
+  {
+    "year": 2025,
+    "month": 11,
+    "city": "IJsselstein",
+    "province": "Utrecht",
+    "agentsEnl": 27,
+    "agentsRes": 33,
+    "apEnl": 11188690,
+    "apRes": 22265096
+  },
+  {
+    "year": 2025,
+    "month": 12,
+    "city": "Leusden",
+    "province": "Utrecht",
+    "agentsEnl": 31,
+    "agentsRes": 31,
+    "apEnl": 37201076,
+    "apRes": 164954496
+  },
+  {
+    "year": 2026,
+    "month": 1,
+    "city": "Amsterdam",
+    "province": "Noord-Holland",
+    "agentsEnl": 54,
+    "agentsRes": 47,
+    "apEnl": 87838922,
+    "apRes": 51572764
+  },
+  {
+    "year": 2026,
+    "month": 2,
+    "city": "Delft",
+    "province": "Zuid-Holland",
+    "agentsEnl": 71,
+    "agentsRes": 64,
+    "apEnl": 16714058,
+    "apRes": 14914703
+  },
+  {
+    "year": 2026,
+    "month": 3,
+    "city": "Zaanse Schans",
+    "province": "Noord-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  }
+]

@@ -19,6 +19,23 @@ namespace FirstSaturdayOrga.Services {
                 )).ToList();
         }
 
+        public async Task<List<FSEventPostCovidListItem>> GetAllPostCovidEventsForYearAsync(int year, CancellationToken ct = default) {
+            var allFsData = await _allFsDataSource.GetAllFSDataAsync(ct);
+
+            return allFsData.Where(p => p.Year == year)
+                .Select(e => new FSEventPostCovidListItem(
+                    GetMonthNameByNr(e.Month),
+                    e.City,
+                    e.Province,
+                    e.AgentsEnl,
+                    e.AgentsRes,
+                    e.AgentsEnl + e.AgentsRes,
+                    e.ApEnl,
+                    e.ApRes,
+                    e.ApEnl + e.ApRes
+                )).ToList();
+        }
+
         private string GetMonthNameByNr(int monthNr) {
             if (monthNr < 1 || monthNr > 12) {
                 throw new ArgumentOutOfRangeException(nameof(monthNr), "Month number must be between 1 and 12.");

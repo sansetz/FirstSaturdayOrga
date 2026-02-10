@@ -1,0 +1,23 @@
+﻿@using FirstSaturdayOrga.Contracts
+
+<TableCard 
+    Title="@Year.ToString()"
+    HeaderColor="@HeaderColor"
+    TableClass="dash-table__table--pre"
+>
+    <tbody>
+        @foreach (var fsEvent in FSEvents) {
+            <tr>
+                <td>@fsEvent.Month</td>
+                <td>@fsEvent.City</td>
+                <td>@fsEvent.Province</td>
+            </tr>
+        }
+    </tbody>
+</TableCard>
+
+@code {
+    [Parameter] public int Year { get; set; }
+    [Parameter] public IReadOnlyList<FSEventListItem> FSEvents { get; set; } = [];
+    [Parameter] public HeaderColor HeaderColor { get; set; } = HeaderColor.Red;
+}

@@ -1,0 +1,21 @@
+﻿@using FirstSaturdayOrga.Extensions
+@using FirstSaturdayOrga.Contracts
+
+<div class="dash-table">
+    <div class="dash-table__header @HeaderColor.ToCssClass()">
+        <span class="dash-table__title @TableClass">@Title</span>
+    </div>
+
+    <div class="dash-table__table-wrapper">
+        <table class="dash-table__table">
+            @ChildContent
+        </table>
+    </div>
+</div>
+
+@code {
+    [Parameter, EditorRequired] public string Title { get; set; } = "";
+    [Parameter] public HeaderColor HeaderColor { get; set; } = HeaderColor.Red;
+    [Parameter] public string? TableClass { get; set; }
+    [Parameter, EditorRequired] public RenderFragment ChildContent { get; set; } = default!;
+}

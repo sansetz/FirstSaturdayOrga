@@ -1,0 +1,167 @@
+﻿body {
+}
+
+.dashboard {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.dashboard-title {
+    margin: 0 0 16px 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+
+.dashboard-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: minmax(420px, 1.4fr) 1fr 1fr;
+    align-items: start;
+}
+
+
+/* Post-covid variant: 2 kolommen (map links, content rechts) */
+.dashboard-grid--post {
+    display: grid;
+    grid-template-columns: 1fr 1.35fr; /* rechts wat breder */
+    gap: 16px;
+    align-items: start;
+}
+
+    /* Map links */
+    .dashboard-grid--post .map-card {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    /* Spul onder de map (later) */
+    .dashboard-grid--post .under-map-card {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    /* Alle tabellen rechts, onder elkaar */
+    .dashboard-grid--post .tables--single {
+        grid-column: 2;
+        grid-row: 1 / span 2; /* naast map + under-map */
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+
+.map-card {
+    grid-column: 1;
+    max-width: 720px;
+    justify-self: start;
+    overflow: hidden;
+}
+
+
+.tables {
+    grid-column: 2 / 4;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.tables-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 0;
+}
+
+
+/* tabellen vullen rechts automatisch de 4 plekken */
+.table-card {
+    min-width: 0;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.06);
+}
+
+.card-title {
+    padding: 12px 14px;
+    border-bottom: 1px solid #eef0f3;
+    font-weight: 700;
+}
+
+.map-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.left-spacer {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+
+/* Nog smaller: alles onder elkaar */
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    .dashboard-grid--post {
+        grid-template-columns: 1fr;
+    }
+
+        .dashboard-grid--post .map-card,
+        .dashboard-grid--post .under-map-card,
+        .dashboard-grid--post .tables--single {
+            grid-column: 1;
+            grid-row: auto;
+        }
+
+    .map-card {
+        grid-column: auto;
+        width: 100%;
+        height: 500px;
+    }
+
+    .map-img {
+        height: 500px;
+        object-fit: contain;
+        background: #eef2f7;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .tables {
+        grid-column: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .tables-col {
+        display: contents;
+    }
+
+    /* jaarvolgorde */
+    .y2023 {
+        order: 1;
+    }
+
+    .y2024 {
+        order: 2;
+    }
+
+    .y2025 {
+        order: 3;
+    }
+
+    .y2026 {
+        order: 4;
+    }
+}

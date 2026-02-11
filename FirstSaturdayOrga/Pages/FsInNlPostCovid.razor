@@ -1,7 +1,8 @@
 ﻿@page "/postcovid"
 
 @using FirstSaturdayOrga.Contracts
-@inject FirstSaturdayOrga.Services.DashboardService DashboardService
+@using FirstSaturdayOrga.Services.App
+@inject DashboardService DashboardService
 
 <PostCovidNavigation />
 <h3>FsInNlPostCovid</h3>
@@ -11,27 +12,28 @@
 
         <section class="card map-card">
             <div class="card-title">Map</div>
-            <img class="map-img" src="images/fsinnl/post-covid.png" alt="Map" />
+            <MapWithMarkers ImageUrl="images/fsinnl/nederland.png"
+                            Markers="@_markers" />
         </section>
 
         <section class="tables">
             <div class="tables-col left">
                 <section class="card table-card y2023">
-                    <EventLocationsDashboardTable Year="2023" FSEvents="@event2023" HeaderColor="HeaderColor.Red" />
+                    <EventLocationsDashboardTable Year="2023" FSEvents="@_event2023" HeaderColor="HeaderColor.Red" />
                 </section>
 
                 <section class="card table-card y20240">
-                    <EventLocationsDashboardTable Year="2024" FSEvents="@event2024" HeaderColor="HeaderColor.Blue" />
+                    <EventLocationsDashboardTable Year="2024" FSEvents="@_event2024" HeaderColor="HeaderColor.Blue" />
                 </section>
             </div>
 
             <div class="tables-col right">
                 <section class="card table-card y2025">
-                    <EventLocationsDashboardTable Year="2025" FSEvents="@event2025" HeaderColor="HeaderColor.Yellow" />
+                    <EventLocationsDashboardTable Year="2025" FSEvents="@_event2025" HeaderColor="HeaderColor.Yellow" />
                 </section>
 
                 <section class="card table-card y2026">
-                    <EventLocationsDashboardTable Year="2026" FSEvents="@event2026" HeaderColor="HeaderColor.Green" />
+                    <EventLocationsDashboardTable Year="2026" FSEvents="@_event2026" HeaderColor="HeaderColor.Green" />
                 </section>
             </div>
         </section>
@@ -41,15 +43,17 @@
 </div>
 
 @code {
-    private List<FSEventListItem> event2023 = [];
-    private List<FSEventListItem> event2024 = [];
-    private List<FSEventListItem> event2025 = [];
-    private List<FSEventListItem> event2026 = [];
+    private List<FSEventListItem> _event2023 = [];
+    private List<FSEventListItem> _event2024 = [];
+    private List<FSEventListItem> _event2025 = [];
+    private List<FSEventListItem> _event2026 = [];
+    private List<RenderMapMarker> _markers = [];
 
     protected override async Task OnInitializedAsync() {
-        event2023 = await DashboardService.GetAllEventsForYearAsync(2023);
-        event2024 = await DashboardService.GetAllEventsForYearAsync(2024);
-        event2025 = await DashboardService.GetAllEventsForYearAsync(2025);
-        event2026 = await DashboardService.GetAllEventsForYearAsync(2026);
+        _event2023 = await DashboardService.GetAllEventsForYearAsync(2023);
+        _event2024 = await DashboardService.GetAllEventsForYearAsync(2024);
+        _event2025 = await DashboardService.GetAllEventsForYearAsync(2025);
+        _event2026 = await DashboardService.GetAllEventsForYearAsync(2026);
+        _markers = await DashboardService.GetAllEventMapMarkersAsync(false);
     }
 }

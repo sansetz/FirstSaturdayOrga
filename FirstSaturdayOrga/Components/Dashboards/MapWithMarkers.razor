@@ -1,0 +1,23 @@
+﻿@using FirstSaturdayOrga.Contracts
+@using FirstSaturdayOrga.Data
+<div class="map-container">
+    <img class="map-image" src="@ImageUrl" alt="@Alt" />
+
+    @foreach (var m in Markers) {
+        <div class="map-marker @m.CssClass"
+             style="top:@m.TopPct%; left:@m.LeftPct%;"
+             aria-label="@m.City">
+        </div>
+
+        <div class="map-tooltip-anchor"
+             style="top:@m.TopPct%; left:@m.LeftPct%;"
+             data-tooltip="@m.City">
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter, EditorRequired] public string ImageUrl { get; set; } = default!;
+    [Parameter] public string Alt { get; set; } = "Map";
+    [Parameter, EditorRequired] public IReadOnlyList<RenderMapMarker> Markers { get; set; } = [];
+}

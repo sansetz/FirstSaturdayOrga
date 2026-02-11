@@ -1,11 +1,10 @@
 ﻿using System.Net.Http.Json;
 
-namespace FirstSaturdayOrga.Services {
-    public class PhotoService {
-
+namespace FirstSaturdayOrga.Services.Data {
+    public class AllPhotosDataSource {
         private readonly HttpClient _httpClient;
 
-        public PhotoService(HttpClient httpClient) => _httpClient = httpClient;
+        public AllPhotosDataSource(HttpClient httpClient) => _httpClient = httpClient;
 
         public async Task<List<string>> GetAllPhotosAsync(CancellationToken ct = default) {
             return (await _httpClient.GetFromJsonAsync<List<string>>(

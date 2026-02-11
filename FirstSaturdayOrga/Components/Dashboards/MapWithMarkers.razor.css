@@ -1,0 +1,83 @@
+﻿body {
+}
+.map-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px; /* optioneel */
+}
+
+.map-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* zichtbare marker (simpel rondje) */
+.map-marker {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    width: 11px;
+    height: 11px;
+    border-radius: 999px;
+    border: 1px solid white ;
+    pointer-events: none; /* marker zelf vangt geen hover */
+}
+
+.marker--y2015 {
+    background: red;
+}
+
+.marker--y2016 {
+    background: yellow;
+}
+.marker--y2019 {
+    background: green;
+}
+.marker--y2020 {
+    background: blue;
+}
+.marker--y2023 {
+    background: blue;
+}
+.marker--y2024 {
+    background: red;
+}
+.marker--y2025 {
+    background: green;
+}
+.marker--y2026 {
+    background: yellow;
+}
+
+/* hover-zone + tooltip */
+.map-tooltip-anchor {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    width: 12px;
+    height: 12px;
+    cursor: default;
+    z-index: 1;
+}
+
+    /* tooltip */
+    .map-tooltip-anchor::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: 115%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, .85);
+        color: white;
+        padding: 4px 8px;
+        font-size: 12px;
+        border-radius: 6px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .12s ease;
+        z-index: 50;
+    }
+
+    .map-tooltip-anchor:hover::after {
+        opacity: 1;
+    }

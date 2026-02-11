@@ -1,6 +1,8 @@
 ﻿@page "/precovid"
 @using FirstSaturdayOrga.Contracts
-@inject FirstSaturdayOrga.Services.DashboardService DashboardService
+@using FirstSaturdayOrga.Data
+@using FirstSaturdayOrga.Services.App
+@inject DashboardService DashboardService
 
 <h3>FsInNl Pre-Covid</h3>
 
@@ -8,27 +10,30 @@
     <div class="dashboard-grid">
         <section class="card map-card">
             <div class="card-title">Map</div>
-            <img class="map-img" src="images/fsinnl/pre-covid.png" alt="Map" />
+
+            <MapWithMarkers ImageUrl="images/fsinnl/nederland.png"
+                            Markers="@_markers" />
+
         </section>
 
         <section class="tables">
             <div class="tables-col left">
                 <section class="card table-card y2015">
-                    <EventLocationsDashboardTable Year="2015" FSEvents="@event2015" HeaderColor="HeaderColor.Red" />
+                    <EventLocationsDashboardTable Year="2015" FSEvents="@_event2015" HeaderColor="HeaderColor.Red" />
                 </section>
 
                 <section class="card table-card y2020">
-                    <EventLocationsDashboardTable Year="2020" FSEvents="@event2020" HeaderColor="HeaderColor.Blue" />
+                    <EventLocationsDashboardTable Year="2020" FSEvents="@_event2020" HeaderColor="HeaderColor.Blue" />
                 </section>
             </div>
 
             <div class="tables-col right">
                 <section class="card table-card y2016">
-                    <EventLocationsDashboardTable Year="2016" FSEvents="@event2016" HeaderColor="HeaderColor.Yellow" />
+                    <EventLocationsDashboardTable Year="2016" FSEvents="@_event2016" HeaderColor="HeaderColor.Yellow" />
                 </section>
 
                 <section class="card table-card y2019">
-                    <EventLocationsDashboardTable Year="2019" FSEvents="@event2019" HeaderColor="HeaderColor.Green" />
+                    <EventLocationsDashboardTable Year="2019" FSEvents="@_event2019" HeaderColor="HeaderColor.Green" />
                 </section>
             </div>
         </section>
@@ -36,15 +41,19 @@
 </div>
 
 @code {
-    private List<FSEventListItem> event2015 = [];
-    private List<FSEventListItem> event2016 = [];
-    private List<FSEventListItem> event2019 = [];
-    private List<FSEventListItem> event2020 = [];
+    private List<FSEventListItem> _event2015 = [];
+    private List<FSEventListItem> _event2016 = [];
+    private List<FSEventListItem> _event2019 = [];
+    private List<FSEventListItem> _event2020 = [];
+
+    private List<RenderMapMarker> _markers = [];
+
 
     protected override async Task OnInitializedAsync() {
-        event2015 = await DashboardService.GetAllEventsForYearAsync(2015);
-        event2016 = await DashboardService.GetAllEventsForYearAsync(2016);
-        event2019 = await DashboardService.GetAllEventsForYearAsync(2019);
-        event2020 = await DashboardService.GetAllEventsForYearAsync(2020);
+        _event2015 = await DashboardService.GetAllEventsForYearAsync(2015);
+        _event2016 = await DashboardService.GetAllEventsForYearAsync(2016);
+        _event2019 = await DashboardService.GetAllEventsForYearAsync(2019);
+        _event2020 = await DashboardService.GetAllEventsForYearAsync(2020);
+        _markers = await DashboardService.GetAllEventMapMarkersAsync(true);
     }
 }

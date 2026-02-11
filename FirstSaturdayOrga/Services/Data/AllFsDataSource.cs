@@ -1,7 +1,7 @@
 ﻿using FirstSaturdayOrga.Data;
 using System.Net.Http.Json;
 
-namespace FirstSaturdayOrga.Services {
+namespace FirstSaturdayOrga.Services.Data {
     public class AllFsDataSource {
         private readonly HttpClient _httpClient;
 

@@ -1,14 +1,16 @@
 ﻿namespace FirstSaturdayOrga.Contracts {
 
-    public sealed record FSEventPostCovidListItem(
+    public sealed record FSEventNumbersListItem(
+        int year,
         string Month,
         string City,
-        string Province,
         int? AgentsEnl,
         int? AgentsRes,
         int? AgentsTotal,
+        string? MostAgents,
         long? ApEnl,
         long? ApRes,
-        long? ApTotal
+        long? ApTotal,
+        string? MostAp
    );
 }

@@ -3,7 +3,7 @@
 @using FirstSaturdayOrga.Contracts
 @inject FirstSaturdayOrga.Services.DashboardService DashboardService
 
-
+<PostCovidNavigation />
 <h3>FsInNlPostCovid</h3>
 
 <div class="dashboard dashboard--post">
@@ -14,42 +14,42 @@
             <img class="map-img" src="images/fsinnl/post-covid.png" alt="Map" />
         </section>
 
-        <!-- toekomstige content onder de map -->
-        <section class="card under-map-card">
-            <!-- leeg voor nu / later -->
+        <section class="tables">
+            <div class="tables-col left">
+                <section class="card table-card y2023">
+                    <EventLocationsDashboardTable Year="2023" FSEvents="@event2023" HeaderColor="HeaderColor.Red" />
+                </section>
+
+                <section class="card table-card y20240">
+                    <EventLocationsDashboardTable Year="2024" FSEvents="@event2024" HeaderColor="HeaderColor.Blue" />
+                </section>
+            </div>
+
+            <div class="tables-col right">
+                <section class="card table-card y2025">
+                    <EventLocationsDashboardTable Year="2025" FSEvents="@event2025" HeaderColor="HeaderColor.Yellow" />
+                </section>
+
+                <section class="card table-card y2026">
+                    <EventLocationsDashboardTable Year="2026" FSEvents="@event2026" HeaderColor="HeaderColor.Green" />
+                </section>
+            </div>
         </section>
 
-        <section class="tables tables--single">
-            <section class="card table-card y2023">
-                <PostCovidDashboardTable Year="2023" FSEvents="@event2023" HeaderColor="HeaderColor.Red" />
-            </section>
-
-            <section class="card table-card y2024">
-                <PostCovidDashboardTable Year="2024" FSEvents="@event2024" HeaderColor="HeaderColor.Blue" />
-            </section>
-
-            <section class="card table-card y2025">
-                <PostCovidDashboardTable Year="2025" FSEvents="@event2025" HeaderColor="HeaderColor.Yellow" />
-            </section>
-
-            <section class="card table-card y2026">
-                <PostCovidDashboardTable Year="2026" FSEvents="@event2026" HeaderColor="HeaderColor.Green" />
-            </section>
-        </section>
 
     </div>
 </div>
 
 @code {
-    private List<FSEventPostCovidListItem> event2023 = [];
-    private List<FSEventPostCovidListItem> event2024 = [];
-    private List<FSEventPostCovidListItem> event2025 = [];
-    private List<FSEventPostCovidListItem> event2026 = [];
+    private List<FSEventListItem> event2023 = [];
+    private List<FSEventListItem> event2024 = [];
+    private List<FSEventListItem> event2025 = [];
+    private List<FSEventListItem> event2026 = [];
 
     protected override async Task OnInitializedAsync() {
-        event2023 = await DashboardService.GetAllPostCovidEventsForYearAsync(2023);
-        event2024 = await DashboardService.GetAllPostCovidEventsForYearAsync(2024);
-        event2025 = await DashboardService.GetAllPostCovidEventsForYearAsync(2025);
-        event2026 = await DashboardService.GetAllPostCovidEventsForYearAsync(2026);
+        event2023 = await DashboardService.GetAllEventsForYearAsync(2023);
+        event2024 = await DashboardService.GetAllEventsForYearAsync(2024);
+        event2025 = await DashboardService.GetAllEventsForYearAsync(2025);
+        event2026 = await DashboardService.GetAllEventsForYearAsync(2026);
     }
 }

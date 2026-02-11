@@ -1,0 +1,18 @@
+﻿@page "/postcovidnumbers"
+@using FirstSaturdayOrga.Contracts
+@inject FirstSaturdayOrga.Services.DashboardService DashboardService
+
+
+<PostCovidNavigation />
+
+<h3>FsInNl Post covid numbers</h3>
+<EventNumbersDashboardTable Year="2023" FSEvents="@events" HeaderColor="HeaderColor.Red" />
+
+
+@code {
+    private List<FSEventNumbersListItem> events = [];
+
+    protected override async Task OnInitializedAsync() {
+        events = await DashboardService.GetAllPostCovidEventsAsync();
+    }
+}

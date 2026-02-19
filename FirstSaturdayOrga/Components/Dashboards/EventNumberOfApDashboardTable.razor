@@ -1,0 +1,41 @@
+﻿@using FirstSaturdayOrga.Contracts
+<TableCard Title="Hoeveelheid AP per factie"
+           HeaderColor="@HeaderColor"
+           TableClass="dash-table__table--post">
+    <thead>
+        <tr>
+            <th>AP ENL</th>
+            <th>AP RES</th>
+            <th>AP Total</th>
+            <th>Most Ap</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var fsEvent in FSEvents) {
+            <tr>
+                <td class="@GetEnlClass(fsEvent)">@fsEvent.ApEnl</td>
+                <td class="@GetResClass(fsEvent)">@fsEvent.ApRes</td>
+                <td>@fsEvent.ApTotal</td>
+                <td class="@GetMostAgentsClass(fsEvent)">@fsEvent.MostAp</td>
+            </tr>
+        }
+    </tbody>
+</TableCard>
+
+@code {
+    [Parameter] public IReadOnlyList<FSEventNumbersListItem> FSEvents { get; set; } = [];
+    [Parameter] public HeaderColor HeaderColor { get; set; } = HeaderColor.Red;
+    private string GetEnlClass(FSEventNumbersListItem fsEvent)
+        => fsEvent.ApEnl > fsEvent.ApRes ? "cell--enl-win" : "";
+
+    private string GetResClass(FSEventNumbersListItem fsEvent)
+        => fsEvent.ApRes > fsEvent.ApEnl ? "cell--res-win" : "";
+
+    private string GetMostAgentsClass(FSEventNumbersListItem fsEvent)
+        => fsEvent.MostAp switch {
+            "ENL" => "cell--enl-win",
+            "RES" => "cell--res-win",
+            _ => ""
+        };
+}

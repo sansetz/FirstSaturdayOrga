@@ -6,14 +6,20 @@
 
 <PostCovidNavigation />
 
-<h3>FsInNl Post covid numbers</h3>
-<EventNumbersDashboardTable Year="2023" FSEvents="@events" HeaderColor="HeaderColor.Red" />
-
+<div class="dashboard">
+    <div class="dashboard-grid">
+        <EventLocationsDashboardTable Title="Alle FS-en Post-Covid" FSEvents="@_events" HeaderColor="@HeaderColor.LightGray" ShowHeaders="true"/>
+        <EventNumberOfAgentsDashboardTable FSEvents="@_eventNumbers" HeaderColor="HeaderColor.LightGray" />
+        <EventNumberOfApDashboardTable FSEvents="@_eventNumbers" HeaderColor="HeaderColor.LightGray" />
+    </div>
+</div>
 
 @code {
-    private List<FSEventNumbersListItem> events = [];
+    private IReadOnlyList<FSEventNumbersListItem> _eventNumbers = [];
+    private IReadOnlyList<FSEventListItem> _events = [];
 
     protected override async Task OnInitializedAsync() {
-        events = await DashboardService.GetAllPostCovidEventsAsync();
+        _eventNumbers = await DashboardService.GetAllPostCovidEventNumbersAsync();
+        _events = await DashboardService.GetAllPostCovidEventsAsync();
     }
 }

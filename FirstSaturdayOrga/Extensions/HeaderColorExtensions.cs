@@ -4,6 +4,7 @@ namespace FirstSaturdayOrga.Extensions {
     public static class HeaderColorExtensions {
         public static string ToCssClass(this HeaderColor color) =>
         color switch {
+            HeaderColor.LightGray => "header--light-gray",
             HeaderColor.Red => "header--red",
             HeaderColor.Blue => "header--blue",
             HeaderColor.Green => "header--green",

@@ -21,15 +21,6 @@
     align-items: start;
 }
 
-
-/* Post-covid variant: 2 kolommen (map links, content rechts) */
-.dashboard-grid--post {
-    display: grid;
-    grid-template-columns: 1fr 1.35fr; /* rechts wat breder */
-    gap: 16px;
-    align-items: start;
-}
-
     /* Map links */
     .dashboard-grid--post .map-card {
         grid-column: 1;
@@ -91,6 +82,8 @@
     padding: 12px 14px;
     border-bottom: 1px solid #eef0f3;
     font-weight: 700;
+    background-color: grey;
+    color: white;
 }
 
 .map-img {
@@ -111,17 +104,6 @@
     .dashboard-grid {
         grid-template-columns: 1fr;
     }
-
-    .dashboard-grid--post {
-        grid-template-columns: 1fr;
-    }
-
-        .dashboard-grid--post .map-card,
-        .dashboard-grid--post .under-map-card,
-        .dashboard-grid--post .tables--single {
-            grid-column: 1;
-            grid-row: auto;
-        }
 
     .map-card {
         grid-column: auto;

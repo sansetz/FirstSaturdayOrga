@@ -1,7 +1,7 @@
 ﻿namespace FirstSaturdayOrga.Contracts {
 
     public sealed record FSEventNumbersListItem(
-        int year,
+        int Year,
         string Month,
         string City,
         int? AgentsEnl,

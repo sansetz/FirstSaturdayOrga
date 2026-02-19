@@ -9,7 +9,6 @@
     overflow-x: auto;
 }
 
-/* table element zit in TableCard zelf -> geen deep nodig */
 .dash-table__table {
     width: 100%;
     border-collapse: separate;
@@ -17,7 +16,6 @@
     table-layout: fixed;
 }
 
-    /* ALLES hieronder gaat over ChildContent -> deep nodig */
     .dash-table__table ::deep th,
     .dash-table__table ::deep td {
         padding: 10px 12px;
@@ -38,38 +36,13 @@
         background: #fcfcfd;
     }
 
-    .dash-table__table ::deep tbody tr:hover td {
+/*    .dash-table__table ::deep tbody tr:hover td {
         background: #f3f4f6;
-    }
+    }*/
 
-    
+   
 
-/ /* 3 kolommen */
-.dash-table__table--pre {
-    table-layout: fixed;
-}
 
-    /* kolombreedtes */
-    .dash-table__table--pre ::deep th:nth-child(1),
-    .dash-table__table--pre ::deep td:nth-child(1) {
-        width: 30%;
-    }
-
-    .dash-table__table--pre ::deep th:nth-child(2),
-    .dash-table__table--pre ::deep td:nth-child(2) {
-        width: 35%;
-    }
-
-    .dash-table__table--pre ::deep th:nth-child(3),
-    .dash-table__table--pre ::deep td:nth-child(3) {
-        width: 35%;
-    }
-/* 9 kolommen */
-.dash-table__table--post {
-    table-layout: auto;
-}
-
-/* gekleurde balk */
 .dash-table__header {
     padding: 10px 12px;
     color: #111827;
@@ -82,25 +55,33 @@
     width: 100%;
     text-align: center;
 }
+.header--light-gray {
+    background-color: lightgray;
+    color: black;
+}
 .header--red {
     background: red;
     color: white;
 }
-
 .header--yellow {
     background-color: yellow;
     color: black;
 }
-
 .header--green {
     background-color: green;
     color: white;
 }
-
 .header--blue {
     background-color: #3b82f6;
     color: white;
 }
 
-
+::deep .cell--enl-win {
+    background-color: rgba(0, 200, 0, 0.15);
+    font-weight: 600;
+}
+::deep .cell--res-win {
+    background-color: rgba(0, 100, 255, 0.15);
+    font-weight: 600;
+}
 

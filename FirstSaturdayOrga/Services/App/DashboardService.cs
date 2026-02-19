@@ -22,7 +22,17 @@ namespace FirstSaturdayOrga.Services.App {
                     e.Province
                 )).ToList();
         }
-        public async Task<List<FSEventNumbersListItem>> GetAllPostCovidEventsAsync(CancellationToken ct = default) {
+        public async Task<List<FSEventListItem>> GetAllPostCovidEventsAsync(CancellationToken ct = default) {
+            var allFsData = await _allFsDataSource.GetAllFSDataAsync(ct);
+
+            return allFsData.Where(p => p.Year > 2020)
+                .Select(e => new FSEventListItem(
+                    GetMonthNameByNr(e.Month),
+                    e.City,
+                    e.Province
+                )).ToList();
+        }
+        public async Task<List<FSEventNumbersListItem>> GetAllPostCovidEventNumbersAsync(CancellationToken ct = default) {
             var allFsData = await _allFsDataSource.GetAllFSDataAsync(ct);
 
             return allFsData.Where(p => p.Year > 2020)

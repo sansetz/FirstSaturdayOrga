@@ -5,9 +5,8 @@
 @inject DashboardService DashboardService
 
 <PostCovidNavigation />
-<h3>FsInNlPostCovid</h3>
 
-<LocationDashboard FSEvents="@_fsEvents" Markers="@_markers" />
+<LocationDashboard Title="First Saturdays in Nederland Post-Covid" FSEvents="@_fsEvents" Markers="@_markers" />
 
 @code {
     private List<FSEventListItem> _event2023 = [];

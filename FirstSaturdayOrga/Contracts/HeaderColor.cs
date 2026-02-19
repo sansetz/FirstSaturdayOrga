@@ -1,5 +1,6 @@
 ﻿namespace FirstSaturdayOrga.Contracts {
     public enum HeaderColor {
+        LightGray,
         Red,
         Green,
         Blue,

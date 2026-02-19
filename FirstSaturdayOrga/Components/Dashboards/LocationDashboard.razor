@@ -1,9 +1,9 @@
 ﻿@using FirstSaturdayOrga.Contracts
-<div class="dashboard dashboard--post">
-    <div class="dashboard-grid dashboard-grid--post">
+<div class="dashboard">
+    <div class="dashboard-grid">
 
         <section class="card map-card">
-            <div class="card-title">Map</div>
+            <div class="card-title">@Title</div>
             <MapWithMarkers ImageUrl="images/fsinnl/nederland.png"
                             Markers="@Markers" />
         </section>
@@ -14,7 +14,7 @@
                 <div class="tables-col left">
                     <section class="card table-card y2023">
                         <EventLocationsDashboardTable 
-                            Year="@FSEvents.ElementAt(i).Key" 
+                            Title="@FSEvents.ElementAt(i).Key.ToString()" 
                             FSEvents="@FSEvents.ElementAt(i).Value"
                             HeaderColor="@HeaderColorHelpers.YearToColor(FSEvents.ElementAt(i).Key)" 
                          />
@@ -23,7 +23,7 @@
                     @if (i + 1 < FSEvents.Count)
                     {
                         <EventLocationsDashboardTable 
-                            Year="@FSEvents.ElementAt(i+1).Key"                            
+                            Title="@FSEvents.ElementAt(i + 1).Key.ToString()"
                             FSEvents="@FSEvents.ElementAt(i+1).Value"
                             HeaderColor="@HeaderColorHelpers.YearToColor(FSEvents.ElementAt(i+1).Key)" 
                         />
@@ -38,6 +38,7 @@
 </div>
 
 @code {
+    [Parameter] public string Title { get; set; } = "First Saturdays in Nederland";
     [Parameter] public IReadOnlyDictionary<int, List<FSEventListItem>> FSEvents { get; set; } = new Dictionary<int, List<FSEventListItem>>();
     [Parameter] public IReadOnlyList<RenderMapMarker> Markers { get; set; } = [];
 }

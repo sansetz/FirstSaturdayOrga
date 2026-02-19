@@ -7,40 +7,7 @@
 <PostCovidNavigation />
 <h3>FsInNlPostCovid</h3>
 
-<div class="dashboard dashboard--post">
-    <div class="dashboard-grid dashboard-grid--post">
-
-        <section class="card map-card">
-            <div class="card-title">Map</div>
-            <MapWithMarkers ImageUrl="images/fsinnl/nederland.png"
-                            Markers="@_markers" />
-        </section>
-
-        <section class="tables">
-            <div class="tables-col left">
-                <section class="card table-card y2023">
-                    <EventLocationsDashboardTable Year="2023" FSEvents="@_event2023" HeaderColor="HeaderColor.Red" />
-                </section>
-
-                <section class="card table-card y20240">
-                    <EventLocationsDashboardTable Year="2024" FSEvents="@_event2024" HeaderColor="HeaderColor.Blue" />
-                </section>
-            </div>
-
-            <div class="tables-col right">
-                <section class="card table-card y2025">
-                    <EventLocationsDashboardTable Year="2025" FSEvents="@_event2025" HeaderColor="HeaderColor.Yellow" />
-                </section>
-
-                <section class="card table-card y2026">
-                    <EventLocationsDashboardTable Year="2026" FSEvents="@_event2026" HeaderColor="HeaderColor.Green" />
-                </section>
-            </div>
-        </section>
-
-
-    </div>
-</div>
+<LocationDashboard FSEvents="@_fsEvents" Markers="@_markers" />
 
 @code {
     private List<FSEventListItem> _event2023 = [];
@@ -49,11 +16,20 @@
     private List<FSEventListItem> _event2026 = [];
     private List<RenderMapMarker> _markers = [];
 
+    private Dictionary<int, List<FSEventListItem>> _fsEvents = new Dictionary<int, List<FSEventListItem>>();
+
     protected override async Task OnInitializedAsync() {
+
         _event2023 = await DashboardService.GetAllEventsForYearAsync(2023);
         _event2024 = await DashboardService.GetAllEventsForYearAsync(2024);
         _event2025 = await DashboardService.GetAllEventsForYearAsync(2025);
         _event2026 = await DashboardService.GetAllEventsForYearAsync(2026);
+
+        _fsEvents.Add(2023, _event2023);
+        _fsEvents.Add(2024, _event2024);
+        _fsEvents.Add(2025, _event2025);
+        _fsEvents.Add(2026, _event2026);
+
         _markers = await DashboardService.GetAllEventMapMarkersAsync(false);
     }
 }

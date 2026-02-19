@@ -28,13 +28,13 @@
 }
 
 .marker--y2016 {
-    background: yellow;
+    background: blue;
 }
 .marker--y2019 {
     background: green;
 }
 .marker--y2020 {
-    background: blue;
+    background: yellow;
 }
 .marker--y2023 {
     background: blue;
@@ -47,6 +47,12 @@
 }
 .marker--y2026 {
     background: yellow;
+}
+.marker--y2027 {
+    background: orange;
+}
+.marker--y2028 {
+    background: purple;
 }
 
 /* hover-zone + tooltip */

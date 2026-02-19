@@ -6,39 +6,7 @@
 
 <h3>FsInNl Pre-Covid</h3>
 
-<div class="dashboard">
-    <div class="dashboard-grid">
-        <section class="card map-card">
-            <div class="card-title">Map</div>
-
-            <MapWithMarkers ImageUrl="images/fsinnl/nederland.png"
-                            Markers="@_markers" />
-
-        </section>
-
-        <section class="tables">
-            <div class="tables-col left">
-                <section class="card table-card y2015">
-                    <EventLocationsDashboardTable Year="2015" FSEvents="@_event2015" HeaderColor="HeaderColor.Red" />
-                </section>
-
-                <section class="card table-card y2020">
-                    <EventLocationsDashboardTable Year="2020" FSEvents="@_event2020" HeaderColor="HeaderColor.Blue" />
-                </section>
-            </div>
-
-            <div class="tables-col right">
-                <section class="card table-card y2016">
-                    <EventLocationsDashboardTable Year="2016" FSEvents="@_event2016" HeaderColor="HeaderColor.Yellow" />
-                </section>
-
-                <section class="card table-card y2019">
-                    <EventLocationsDashboardTable Year="2019" FSEvents="@_event2019" HeaderColor="HeaderColor.Green" />
-                </section>
-            </div>
-        </section>
-    </div>
-</div>
+<LocationDashboard FSEvents="@_fsEvents" Markers="@_markers" />
 
 @code {
     private List<FSEventListItem> _event2015 = [];
@@ -48,12 +16,19 @@
 
     private List<RenderMapMarker> _markers = [];
 
+    private Dictionary<int, List<FSEventListItem>> _fsEvents = new Dictionary<int, List<FSEventListItem>>();
 
     protected override async Task OnInitializedAsync() {
         _event2015 = await DashboardService.GetAllEventsForYearAsync(2015);
         _event2016 = await DashboardService.GetAllEventsForYearAsync(2016);
         _event2019 = await DashboardService.GetAllEventsForYearAsync(2019);
         _event2020 = await DashboardService.GetAllEventsForYearAsync(2020);
+
+        _fsEvents.Add(2015, _event2015);
+        _fsEvents.Add(2020, _event2020);
+        _fsEvents.Add(2016, _event2016);
+        _fsEvents.Add(2019, _event2019);
+
         _markers = await DashboardService.GetAllEventMapMarkersAsync(true);
     }
 }

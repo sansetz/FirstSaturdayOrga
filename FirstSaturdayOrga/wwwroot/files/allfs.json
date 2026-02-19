@@ -654,7 +654,7 @@
   {
     "year": 2024,
     "month": 2,
-    "city": "Den Bosch",
+    "city": "‘s-Hertogenbosch",
     "province": "Noord-Brabant",
     "agentsEnl": 31,
     "agentsRes": 36,
@@ -917,6 +917,16 @@
     "month": 3,
     "city": "Zaanse Schans",
     "province": "Noord-Holland",
+    "agentsEnl": null,
+    "agentsRes": null,
+    "apEnl": null,
+    "apRes": null
+  },
+  {
+    "year": 2026,
+    "month": 3,
+    "city": "‘s-Hertogenbosch",
+    "province": "Brabant",
     "agentsEnl": null,
     "agentsRes": null,
     "apEnl": null,

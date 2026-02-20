@@ -32,15 +32,10 @@
         font-weight: 700;
     }
 
-    .dash-table__table ::deep tbody tr:nth-child(even) td {
+    .dash-table__table ::deep tbody tr:nth-child(even) {
         background: #fcfcfd;
     }
 
-/*    .dash-table__table ::deep tbody tr:hover td {
-        background: #f3f4f6;
-    }*/
-
-   
 
 
 .dash-table__header {
@@ -49,6 +44,13 @@
     font-weight: 800;
     border-bottom: 1px solid rgba(0,0,0,.08);
 }
+.dash-table__footer {
+    padding: 10px 12px;
+    color: #111827;
+    font-weight: 800;
+    border-top: 1px solid rgba(0,0,0,.08);
+}
+
 
 .dash-table__title {
     display: inline-block;
@@ -78,10 +80,17 @@
 
 ::deep .cell--enl-win {
     background-color: rgba(0, 200, 0, 0.15);
-    font-weight: 600;
+/*    font-weight: 600;*/
 }
 ::deep .cell--res-win {
     background-color: rgba(0, 100, 255, 0.15);
-    font-weight: 600;
+/*    font-weight: 600;*/
 }
 
+::deep .row--totals {
+    font-weight: 800;
+}
+
+::deep .cell--totals {
+    border-top: 1px solid black;
+}

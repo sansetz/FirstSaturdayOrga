@@ -14,26 +14,44 @@
 
         @foreach (var fsEvent in FSEvents) {
             <tr>
-                <td class="@GetEnlClass(fsEvent)">@fsEvent.ApEnl</td>
-                <td class="@GetResClass(fsEvent)">@fsEvent.ApRes</td>
+                <td class="@GetEnlClass(fsEvent.ApEnl, fsEvent.ApRes)">@fsEvent.ApEnl</td>
+                <td class="@GetResClass(fsEvent.ApEnl, fsEvent.ApRes)">@fsEvent.ApRes</td>
                 <td>@fsEvent.ApTotal</td>
-                <td class="@GetMostAgentsClass(fsEvent)">@fsEvent.MostAp</td>
+                <td class="@GetMostAgentsClass(fsEvent.MostAp)">@fsEvent.MostAp</td>
             </tr>
         }
     </tbody>
+    <tfoot>
+        <tr class="row--totals">
+            <td class="@GetEnlClass(_totalApEnl, _totalApRes) cell--totals">@_totalApEnl</td>
+            <td class="@GetResClass(_totalApEnl, _totalApRes) cell--totals">@_totalApRes</td>
+            <td class="cell--totals">@_totalAp</td>
+            <td class="@GetMostAgentsClass(_mostApTotal) cell--totals">@_mostApTotalDisplay</td>
+        </tr>
+    </tfoot>
 </TableCard>
 
 @code {
     [Parameter] public IReadOnlyList<FSEventNumbersListItem> FSEvents { get; set; } = [];
     [Parameter] public HeaderColor HeaderColor { get; set; } = HeaderColor.Red;
-    private string GetEnlClass(FSEventNumbersListItem fsEvent)
-        => fsEvent.ApEnl > fsEvent.ApRes ? "cell--enl-win" : "";
 
-    private string GetResClass(FSEventNumbersListItem fsEvent)
-        => fsEvent.ApRes > fsEvent.ApEnl ? "cell--res-win" : "";
+    private long? _totalApEnl => FSEvents.Sum(e => e.ApEnl);
+    private long? _totalApRes => FSEvents.Sum(e => e.ApRes);
+    private long? _totalAp => FSEvents.Sum(e => e.ApTotal);
+    private int? _countEnlWon => FSEvents.Count(e => e.ApEnl > e.ApRes);
+    private int? _countResWon => FSEvents.Count(e => e.ApRes > e.ApEnl);
+    private int? _countEqual => FSEvents.Count(e => e.ApRes == e.ApEnl);
+    private string? _mostApTotal => _countEnlWon > _countResWon ? "ENL" : _countResWon > _countEnlWon ? "RES" : "Gelijk";
+    private string? _mostApTotalDisplay => _countEnlWon > _countResWon ? $"ENL {_countEnlWon}x - RES {_countResWon}x" : _countResWon > _countEnlWon ? $"RES {_countResWon}x - ENL {_countEnlWon}x" : "Gelijk";
 
-    private string GetMostAgentsClass(FSEventNumbersListItem fsEvent)
-        => fsEvent.MostAp switch {
+    private string GetEnlClass(long? nrEnl, long? nrRes)
+        => nrEnl > nrRes ? "cell--enl-win" : "";
+
+    private string GetResClass(long? nrEnl, long? nrRes)
+        => nrRes > nrEnl ? "cell--res-win" : "";
+
+    private string GetMostAgentsClass(string? mostAgents)
+        => mostAgents switch {
             "ENL" => "cell--enl-win",
             "RES" => "cell--res-win",
             _ => ""

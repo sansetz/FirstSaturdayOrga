@@ -1,19 +1,22 @@
 ﻿<div class="@("step-card " + (IsRequiredStep ? "step-card--required" : "step-card--optional"))">
     <div class="step-icon-container">
-        @if (IsRequiredStep)
-        {
-            <span class="step-icon step-icon--required"
-                  style="--icon-url: url('@($"../icons/{IconName}.svg")');">
-            </span>
-        }
-        else
-        {
-            <span class="step-icon step-icon--optional"
-                  style="--icon-url: url('@($"../icons/{IconName}.svg")');">
-            </span>
+        @{
+            var iconClass = IsRequiredStep ? "step-icon--required" : "step-icon--optional";
         }
 
+        @for (int i = 0; i < _icons.Count; i++) {
+            var iconName = _icons[i];
 
+            <span class="@($"step-icon {iconClass} {(i > 0 ? "step-icon--extra" : "")}")"
+                  style="--icon-url: url('@($"../icons/{iconName}.svg")');">
+            </span>
+
+            @if (_showArrowIcon && i == 0) {
+                <span class="@($"step-icon {iconClass} step-icon--extra")"
+                      style="--icon-url: url('../icons/arrow.svg');">
+                </span>
+            }
+        }
     </div>
     <div class="step-title">
         <div class="step-title--short">@TitleShort</div>
@@ -55,15 +58,23 @@
 @code {
     [Parameter] public string TitleShort { get; set; } = "";
     [Parameter] public string TitleLong { get; set; } = "";
-    [Parameter] public string IconName { get; set; } = "";
+    [Parameter] public string Icons { get; set; } = "";
     [Parameter] public bool IsRequiredStep { get; set; } = true;
 
 
     [Parameter] public RenderFragment? PopupContent { get; set; }
 
 
+    private List<string> _icons = new List<string>();
+
     private bool _isOpen;
+    private bool _showArrowIcon = false;
 
     private void Open() => _isOpen = true;
     private void Close() => _isOpen = false;
+
+    protected override void OnParametersSet() {
+        _icons = Icons.Split(',').Select(icon => icon.Trim()).ToList();
+        _showArrowIcon = _icons.Count > 1;
+    }
 }

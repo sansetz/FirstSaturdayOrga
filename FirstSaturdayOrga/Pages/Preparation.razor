@@ -5,7 +5,7 @@
         <StepCard 
             TitleShort="1. FevGames registratie"
             TitleLong="Stap 1: Registreren bij FevGames"
-            IconName="fevgames"
+            Icons="fevgames"
             IsRequiredStep="true"
         >
             <PopupContent>
@@ -15,7 +15,7 @@
         <StepCard 
             TitleShort="2. Telegram chats maken"
             TitleLong="Stap 2: Telegram groepen en kanaal aanmaken"
-            IconName="telegram"
+            Icons="telegram"
             IsRequiredStep="true"
         >
             <PopupContent>
@@ -25,17 +25,17 @@
         <StepCard 
             TitleShort="3. Aankondiging versturen"
             TitleLong="Stap 3: Aankondiging sturen naar diverse chats"
-            IconName="announcement"
+            Icons="announcement"
             IsRequiredStep="true"
         >
             <PopupContent>
-                <TelegramChatsPopup />
+                <AankondigingDelenPopup />
             </PopupContent>
         </StepCard>
         <StepCard 
             TitleShort="4. FS Bot inrichten"
             TitleLong="Stap 4: FS Bot inrichten"
-            IconName="bot"
+            Icons="bot"
             IsRequiredStep="true"
         >
             <PopupContent>
@@ -45,11 +45,11 @@
         <StepCard 
             TitleShort="5. Passcode portals delen"
             TitleLong="Stap 5: Passcode portals delen in passcode chat"
-            IconName="passcode"
+            Icons="passcode"
             IsRequiredStep="true"
         >
             <PopupContent>
-                <TelegramChatsPopup />
+                <PasscodePortalsDelenPopup />
             </PopupContent>
         </StepCard>
     </RequiredContent>
@@ -57,51 +57,51 @@
         <StepCard 
             TitleShort="A. Locatie regelen"
             TitleLong="Stap A: Geschikte locatie regelen"
-            IconName="beer"
+            Icons="beer"
             IsRequiredStep="false"
         >
             <PopupContent>
-                <FevGamesRegistrationPopup />
+                <LocatieRegelenPopup />
             </PopupContent>
         </StepCard>
         <StepCard 
             TitleShort="B. Biocard maken"
             TitleLong="Stap B: Biocard (laten) maken"
-            IconName="biocard"
+            Icons="biocard"
             IsRequiredStep="false"
         >
             <PopupContent>
-                <FevGamesRegistrationPopup />
+                <BiocardMakenPopup />
             </PopupContent>
         </StepCard>
         <StepCard 
             TitleShort="C. Banner(s) maken"
             TitleLong="Stap C: Een of meerdere banners maken"
-            IconName="banner"
+            Icons="banner"
             IsRequiredStep="false"
         >
             <PopupContent>
-                <FevGamesRegistrationPopup />
+                <BannerMakenPopup />
             </PopupContent>
         </StepCard>
         <StepCard 
             TitleShort="D. Bot reminders schedulen"
             TitleLong="Stap D: Bot reminders schedules"
-            IconName="bot"
+            Icons="bot"
             IsRequiredStep="false"
         >
             <PopupContent>
-                <FevGamesRegistrationPopup />
+                <BotRemindersSchedulenPopup />
             </PopupContent>
         </StepCard>
         <StepCard 
             TitleShort="E. Prijsjes regelen"
             TitleLong="Stap E: Leuke prijsjes regelen"
-            IconName="prize"
+            Icons="prize"
             IsRequiredStep="false"
         >
             <PopupContent>
-                <FevGamesRegistrationPopup />
+                <PrijsjesRegelenPopup />
             </PopupContent>
         </StepCard>
     </OptionalContent>

@@ -2,7 +2,59 @@
     font-family: Verdana;
 }
 
-.step-title{
+.step-card {
+    display: grid;
+    grid-template-columns: 30px 1fr 30px;
+    align-items: center;
+    justify-items: center;
+    gap: 6px;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid var(--color-black);
+}
+
+.step-card--required {
+    background-color: var(--color-black);
+    color: var(--color-blue);
+}
+
+.step-card--optional {
+    background-color: var(--color-black);
+    color: var(--color-green);
+}
+
+.step-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px;
+    width: 100%;
+}
+
+.step-icon {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    flex: 0 0 auto;
+    -webkit-mask: var(--icon-url) no-repeat center / contain;
+    mask: var(--icon-url) no-repeat center / contain;
+}
+
+.step-icon--required {
+    background-color: var(--color-blue);
+}
+
+.step-icon--optional {
+    background-color: var(--color-green);
+}
+
+.step-icon--extra {
+    display: none;
+}
+
+.step-title {
+    width: 100%;
+    text-align: center;
 }
 
 .step-title--short {
@@ -15,85 +67,42 @@
     font-size: 150%;
 }
 
-@media (min-width: 768px) {
-    .step-title--short {
-        display: none;
-    }
-
-    .step-title--long {
-        display: block;
-    }
+.step-info-btn {
+    width: 20px;
+    height: 20px;
+    border: 0;
+    border-radius: 999px;
+    color: var(--color-black);
+    cursor: pointer;
 }
 
-.step-icon {
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    -webkit-mask: var(--icon-url) no-repeat center / contain;
-    mask: var(--icon-url) no-repeat center / contain;
-}
-@media (min-width: 768px) {
-    .step-icon {
-        width: 50px;
-        height: 50px;
-    }
-}
-
-.step-icon--required {
+.step-info-btn--required {
     background-color: var(--color-blue);
 }
-.step-icon--optional {
+
+.step-info-btn--optional {
     background-color: var(--color-green);
 }
 
-.step-card {
-    border: 1px solid var(--color-black);
-    margin: 5px;
-    padding: 5px;
-    display: grid;
-    grid-template-columns: 30px auto 30px;
-    gap: 3px;
-    align-items: center;
-    justify-items: center;
-}
-
-.step-card--required {
-    background-color: var(--color-black);
-    color: var(--color-blue);
-}
-.step-card--optional {
-    background-color: var(--color-black);
-    color: var(--color-green);
-}
-
-@media (min-width: 768px) {
-    .step-card {
-        grid-template-columns: 50px auto 50px;
-        padding: 10px;
-    }
-}
 .modal-container {
     position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,.55);
+    inset: 0;
+    z-index: 9999;
     display: grid !important;
     place-items: center !important;
     padding: 16px;
-    z-index: 9999;
+    background: rgba(0, 0, 0, 0.55);
 }
 
 .modal-content {
-    background: #fff;
-    width: min(920px, calc(100vw - 32px)) !important;
-    margin: 0 !important;
-    justify-self: center;
-    align-self: center;
-    max-height: 85vh;
     display: flex;
     flex-direction: column;
+    width: min(920px, calc(100vw - 32px)) !important;
+    max-height: 85vh;
+    margin: 0 !important;
+    background: #fff;
+    justify-self: center;
+    align-self: center;
 }
 
 .modal-header {
@@ -106,35 +115,42 @@
 }
 
 .modal-close {
+    padding: 4px 8px;
     border: 0;
     background: transparent;
     font-size: 26px;
     line-height: 1;
     cursor: pointer;
-    padding: 4px 8px;
 }
 
 .modal-body {
     padding: 16px;
-    overflow: auto; 
-}
-
-.step-info-btn {
-    border: 0;
-    color: var(--color-black);
-    border-radius: 999px;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-}
-.step-info-btn--required {
-    background-color: var(--color-blue);
-}
-.step-info-btn--optional {
-    background-color: var(--color-green);
+    overflow: auto;
 }
 
 @media (min-width: 768px) {
+    .step-card {
+        grid-template-columns: 290px 1fr 50px;
+        padding: 10px;
+    }
+
+    .step-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .step-icon--extra {
+        display: inline-block;
+    }
+
+    .step-title--short {
+        display: none;
+    }
+
+    .step-title--long {
+        display: block;
+    }
+
     .step-info-btn {
         width: 28px;
         height: 28px;

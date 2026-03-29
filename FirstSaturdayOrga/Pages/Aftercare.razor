@@ -2,16 +2,50 @@
 
 <FSOrga PageTitle="Nazorg">
     <RequiredContent>
-        <StepCard TitleShort="1. Foto delen"
-                  TitleLong="Stap 1: Groepsfoto delen op Social Media"
-                  IconName="photo"
+        <StepCard 
+            TitleShort="1. Foto delen"
+            TitleLong="Stap 1: Groepsfoto delen op Social Media"
+            Icons="photo,x,reddit,bluesky"
+            IsRequiredStep="true"
+        >
+            <PopupContent>
+                <FotoDelenOpSocialMediaPopup />
+            </PopupContent>
+        </StepCard>
+        <StepCard TitleShort="2. Stats naar sheet"
+                  TitleLong="Stap 2: Stats overnemen op de FS sheet"
+                  Icons="stats,spreadsheet"
                   IsRequiredStep="true">
             <PopupContent>
-                <FevGamesRegistrationPopup />
+                <StatsNaarSheetPopup />
+            </PopupContent>
+        </StepCard>
+        <StepCard TitleShort="3. Stats naar Fevgames"
+                  TitleLong="Stap 3: Stats opsturen naar Fevgames"
+                  Icons="stats,fevgames"
+                  IsRequiredStep="true">
+            <PopupContent>
+                <StatsNaarFevgamesPopup />
+            </PopupContent>
+        </StepCard>
+        <StepCard TitleShort="4. Passcode naar Fevgames"
+                  TitleLong="Stap 4: Opgeloste passcode delen met Fevgames"
+                  Icons="passcode,fevgames"
+                  IsRequiredStep="true">
+            <PopupContent>
+                <PasscodeNaarFevgamesPopup />
             </PopupContent>
         </StepCard>
     </RequiredContent>
     <OptionalContent>
+        <StepCard TitleShort="A.Felicitatie in chats"
+                  TitleLong="Stap A: Felicitatie bericht in chats bij +1"
+                  Icons="prize"
+                  IsRequiredStep="false">
+            <PopupContent>
+                <FelicitatieInChats />
+            </PopupContent>
+        </StepCard>
 
     </OptionalContent>
 </FSOrga>

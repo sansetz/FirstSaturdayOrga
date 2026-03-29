@@ -917,19 +917,39 @@
     "month": 3,
     "city": "Zaanse Schans",
     "province": "Noord-Holland",
-    "agentsEnl": null,
-    "agentsRes": null,
-    "apEnl": null,
-    "apRes": null
+    "agentsEnl": 50,
+    "agentsRes": 29,
+    "apEnl": 30805199,
+    "apRes": 20897544
   },
   {
     "year": 2026,
     "month": 3,
     "city": "‘s-Hertogenbosch",
-    "province": "Brabant",
-    "agentsEnl": null,
-    "agentsRes": null,
-    "apEnl": null,
-    "apRes": null
+    "province": "Noord-Brabant",
+    "agentsEnl": 19,
+    "agentsRes": 37,
+    "apEnl": 14631006,
+    "apRes": 24679254
+  },
+  {
+    "year": 2026,
+    "month": 4,
+    "city": "Baarle-Nassau",
+    "province": "Noord-Brabant",
+    "agentsEnl": 1,
+    "agentsRes": 1,
+    "apEnl": 1,
+    "apRes": 1
+  },
+  {
+    "year": 2026,
+    "month": 5,
+    "city": "Den Helder",
+    "province": "Noord-Holland",
+    "agentsEnl": 1,
+    "agentsRes": 1,
+    "apEnl": 1,
+    "apRes": 1
   }
 ]

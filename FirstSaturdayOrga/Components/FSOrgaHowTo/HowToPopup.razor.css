@@ -41,3 +41,12 @@
     max-height: 80px;
     object-fit: contain;
 }
+
+::deep .warning-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    -webkit-mask: var(--icon-url) no-repeat center / contain;
+    mask: var(--icon-url) no-repeat center / contain;
+    background-color: var(--color-warning-icon);
+}

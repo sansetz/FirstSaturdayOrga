@@ -947,9 +947,29 @@
     "month": 5,
     "city": "Den Helder",
     "province": "Noord-Holland",
-    "agentsEnl": 1,
-    "agentsRes": 1,
-    "apEnl": 1,
-    "apRes": 1
+    "agentsEnl": 28,
+    "agentsRes": 25,
+    "apEnl": 32360862,
+    "apRes": 22379370
+  },
+  {
+    "year": 2026,
+    "month": 5,
+    "city": "Enschede",
+    "province": "Overijssel",
+    "agentsEnl": 15,
+    "agentsRes": 20,
+    "apEnl": 13199396,
+    "apRes": 10866508
+  },
+  {
+    "year": 2026,
+    "month": 5,
+    "city": "Schiedam",
+    "province": "Zuid-Holland",
+    "agentsEnl": 20,
+    "agentsRes": 33,
+    "apEnl": 13937692,
+    "apRes": 35603636
   }
 ]
